@@ -1,15 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <!--Select a framework that the application will run on (not necessarily a .net core framework) -->
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <!--All the elements which are supposed to be visible in the browser must be located in wwwroot (whitelisted)-->
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
+  <!--Installed packages don't need versioning anymore, it'll take the most recent one-->
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
 </Project>
